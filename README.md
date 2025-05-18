@@ -1,46 +1,54 @@
-# Data Analysis Project
+# Git & Environment Setup
 
-## Project Overview
-This project focuses on analyzing data to uncover insights, trends, and patterns. The goal is to leverage data-driven approaches to solve problems and support decision-making.
+## How to Reproduce the Environment
 
-## Features
-- Data cleaning and preprocessing
-- Exploratory data analysis (EDA)
-- Visualization of key findings
-- Statistical analysis and modeling
-- Reporting and documentation
+Follow these steps to set up your development environment and CI:
 
-## Requirements
-- Python 3.11
-- Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn (or others as needed)
+1. **Clone the repository:**
 
-## Installation
-1. Clone the repository:
-        git clone https://github.com/Seya-prog/solar-challenge-week1.git
-    
-2. Navigate to the project directory:
-        cd solar-challenge-week1
-    
-3. Set up a virtual environment:
-        python -m venv .venv
-    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-    
-4. Install dependencies:
-        pip install -r requirements.txt
+    git clone https://github.com/Seya-prog/solar-challenge-week1.git
+    cd solar-challenge-week1
+
+
+2. **Set up a Python virtual environment:**
+
+    python -m venv .venv
+    # On Unix/macOS:
+    source .venv/bin/activate
+    # On Windows:
+    .venv\Scripts\activate
     
 
-## Usage
-1. Place your dataset in the data/ directory.
-2. Run the analysis script:
-        python analysis.py
+3. **Install dependencies:**
+
+    pip inastall pandas
     
-3. View the results in the output/ directory.
 
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request.
+4. **Continuous Integration:**
+    - This project uses GitHub Actions for CI.
+    - On every push or pull request, the workflow in `.github/workflows/ci.yml` will:
+        - Set up Python 3.11
+        - Install dependencies from `requirements.txt`
+        - Run `python --version` to verify the environment
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+5. **.gitignore:**
+    - The `.gitignore` file excludes virtual environments, data directories, and notebook checkpoints.
 
-## Contact
-For questions or feedback, please contact seidmuhidin@gmail.com.
+## Folder Structure
+
+solar-challenge-week1/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── .vscode/
+│   └── settings.json
+├── src/
+│   ├── notebooks/
+│   └── scripts/
+│   └── tests/
+├── requirements.txt
+├── .gitignore
+└── README.md
+
+For more details, see the [ci.yml](.github/workflows/ci.yml) workflow file.
