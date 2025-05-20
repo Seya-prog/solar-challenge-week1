@@ -52,4 +52,3 @@ solar-challenge-week1/
 └── README.md
 
 For more details, see the [ci.yml](.github/workflows/ci.yml) workflow file.
->>>>>>> main
